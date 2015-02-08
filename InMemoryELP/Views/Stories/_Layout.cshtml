@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/medium-editor.min.css" rel="stylesheet" />
+    <link href="~/Content/flat.min.css" rel="stylesheet" />
+    <link href="~/Content/medium-editor-insert-plugin-frontend.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/build/story.js"></script>
+</head>
+<body id="body" style="display:none">
+    <a href="/">
+        <div id="header">
+            <div id="headerText">
+
+            </div>
+        </div>
+    </a>
+    <div id="rightBar">
+        @RenderSection("rightBar", false)
+    </div>
+    <div id="mainBar">
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model InMemoryELP.Models.StoryViewModel
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Stories/_Layout.cshtml";
+}
+
+<h1>
+    @Model.Title
+</h1>
+<div>
+    <h3>by @Model.AuthorName</h3>
+</div>
+<div>
+    @Html.Raw(Model.HTMLBodyText)
+</div>
+
+@section rightBar{
+    @if (User.IsInRole("Family"))
+    {
+        <h2>Admin Controls</h2>
+        <table style="text-align:left;">
+            <tr>
+                <th>Public?</th>
+                <td></td>
+            </tr>
+            @if (Model.Public)
+            {                
+                <tr>
+                    <td></td>
+                    <td>
+                        This article is share with <b>everybody</b>.
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td></td>
+                    <td>
+                        This article is share with only <b>family</b>.
+                    </td>
+                </tr>
+            }
+            @if (Model.Approved) 
+            { 
+                <tr>
+                    <th>Approved?</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><b>Yes</b></td>
+                    <td>
+                        <button onclick="window.location.href = '/Stories/RevokeApproval/@Model.Id'">Revoke Approval</button>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td><b>No</b></td>
+                    <td>
+                        <button onclick="window.location.href = '/Stories/Approve/@Model.Id'">Approve</button>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <button onclick="window.location.href = '/Stories/Remove/@Model.Id'">Remove Story</button>
+                </td>
+            </tr>
+        </table>
+    }
+}

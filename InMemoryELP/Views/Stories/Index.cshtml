@@ -1,0 +1,80 @@
+﻿@model IEnumerable<InMemoryELP.Models.StoryViewModel>
+@{
+    Layout = null;
+}
+
+<script>
+    function imageSwapper(stack) {
+        var toHide = stack[0]
+        var toShow = stack[1];
+
+        stack.push(stack.shift());
+
+        $('#' + toHide).fadeOut(1000, function () {
+            $('#' + toShow).fadeIn(800);
+        });
+        
+
+        setTimeout(function () {
+            imageSwapper(stack);
+        }, getRandomInt(10000, 30000));
+    }
+
+    /**
+     * Returns a random integer between min (inclusive) and max (inclusive)
+     * Using Math.round() will give you a non-uniform distribution!
+     */
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
+</script>
+
+@foreach (var story in Model)
+{
+    <a href="/stories/story/@story.Id">
+    <div class="StoryCard">
+        <h2>@story.Title</h2>
+        <p>by <span>@story.AuthorName</span></p>
+        @if (story.ImageUrls.Count() > 0)
+        {
+            var id = Guid.NewGuid();
+              
+            <div id="@id">
+
+            </div>
+            <script>
+                $(document).ready(function () {
+                    var imgs = JSON.parse('@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(story.ImageUrls))');
+                    var ids = new Array();
+                    if (imgs.length > 1) {
+
+                        for (var i = 0; i < imgs.length; i++) {
+                            var imgId = '@id' + '-' + i;
+                            ids.push(imgId);
+
+                            $('#@id').append('<img id="' + imgId + '" src="' + imgs[i] + '" class="Image"/>');
+                        }
+
+                        imageSwapper(ids);
+                    } else {
+                        var imgId = '@id' + '-' + '0';
+                        $('#@id').append('<img id="' + imgId + '" src="' + imgs[0] + '" class="Image" style="display:block;"/>');
+                    }
+                })
+            </script>
+           
+            <div class="PreviewBox">
+                <div class="Preview">
+                    @story.Preview &#8230;
+                </div>
+                <div class="ReadMore">
+                    Read more...
+                </div>
+            </div>
+
+        }
+    </div>
+    </a>
+}

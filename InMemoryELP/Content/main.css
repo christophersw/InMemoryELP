@@ -1,0 +1,80 @@
+﻿body {
+    width:95%;
+    min-width:800px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F1EED9;
+}
+
+h1, h2, h3, h4{
+    color:#343434;
+}
+
+#header{
+    width:100%;
+    background-image:url('../Content/Images/Bill_of_Rights_Pg1of1_AC.jpg');
+    background-color:#2E221F;
+    height:300px;
+    margin:0 0 10px 0;
+}
+
+#rightBar{
+    font-size:.8em;
+    width:20%;
+    float:right;
+    margin:0;
+    padding:3%;
+    background-color: #F2EFF0;
+    border-radius:5px;
+    border: 1px solid #9B9796;
+}
+
+#mainBar{
+    width:66%;
+    float:left;
+    margin:0;
+    padding:3%;
+    background-color: #F2EFF0;
+    border-radius:5px;
+    border: 1px solid #9B9796;
+}
+
+.StoryCard {
+    margin:2%;
+    width:91%;
+
+    border-radius:5px;
+    display:inline-block;
+    color:#2E221F;
+}
+
+.StoryCard h1, h2, h3{
+}
+
+.StoryCard .PreviewBox{
+    float:right;
+    width: 60%;
+    color:#2E221F;
+}
+
+.StoryCard .Preview{
+    margin:0 2%;
+    max-height:200px;
+    overflow:hidden;
+    display:inline-block;
+}
+
+.StoryCard .ReadMore {
+    margin:0 2%;
+    float:right;
+}
+
+.StoryCard .Image{
+    min-width:150px;
+    width:30%;
+    float:left;
+    display:none;
+}
+
+.StoryCard img{
+    display:none;
+}
