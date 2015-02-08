@@ -36,6 +36,12 @@ namespace InMemoryELP.Models
 
             story = new ImageBlobContext(this.storageAccount).CommittStoryImages(story);
 
+            //We need to trap for Private Stories marked as "Not Approved" - Those stories don't need to go through approval.
+            if (story.PartitionKey == "Private")
+            {
+                story.Approved = true;
+            }
+
             // Create the TableOperation that inserts story.
             TableOperation insertOperation = TableOperation.Insert(story);
 
@@ -223,7 +229,7 @@ namespace InMemoryELP.Models
 
         private StoryViewModel StoryToSVM(Story row)
         {
-            
+           
             var result = new StoryViewModel()
             {
                 Id = Guid.Parse(row.RowKey),
@@ -232,10 +238,11 @@ namespace InMemoryELP.Models
                 Title = row.Title,
                 HTMLBodyText = row.HTMLBodyText,
                 ImageUrls = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(row.ImageUrls),
-                Public = true,
                 Preview = row.Preview,
                 Approved = row.Approved
             };
+
+            result.Public = (row.PartitionKey == "Public");
 
             return result;
         }

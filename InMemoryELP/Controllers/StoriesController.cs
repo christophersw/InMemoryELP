@@ -32,6 +32,17 @@ namespace InMemoryELP.Controllers
             }
             else
             {
+                //Check for private stories if Family...
+                if (User.IsInRole("Family"))
+                {
+                    model = context.GetPrivateStory(id);
+
+                    if (model != null)
+                    {
+                        return View(model);
+                    }
+                }
+
                 Response.StatusCode = 404;
                 return Content("Not Found");
             }
@@ -42,6 +53,14 @@ namespace InMemoryELP.Controllers
         public ActionResult PendingApproval()
         {
             var model = context.GetUnapprovedStories();
+            return View(model);
+        }
+
+        [ChildActionOnly]
+        [Authorize(Roles = "Family")]
+        public ActionResult PrivateStories()
+        {
+            var model = context.GetPrivateStories();
             return View(model);
         }
 

@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-<h2>Stories that are Pending Approval</h2>
+<h2>Stories Shared Privately with ONLY Family</h2>
 @if (Model.Count() > 0)
 {
     foreach (var story in Model)
@@ -56,5 +56,6 @@
 }
 else
 {
-    <h3>Nothing Pending...</h3>
+    <h3>No stories have been shared privately with family...</h3>
 }
+

@@ -483,6 +483,7 @@
     <Content Include="Views\Family\Index.cshtml" />
     <Content Include="Views\Stories\Story.cshtml" />
     <Content Include="Views\Stories\PendingApproval.cshtml" />
+    <Content Include="Views\Stories\PrivateStories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
