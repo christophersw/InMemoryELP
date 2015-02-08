@@ -188,9 +188,16 @@ namespace InMemoryELP.Models
             var table = getTable();
             var result = new List<StoryViewModel>();
 
-            TableQuery<Story> queryString = new TableQuery<Story>().Where(TableQuery.GenerateFilterConditionForBool("Approved", QueryComparisons.Equal, false));
+            string queryString = TableQuery.GenerateFilterConditionForBool("Approved", QueryComparisons.Equal, false); // !== Approved
 
-            result = StoryToSVM(table.ExecuteQuery(queryString));
+            string PublicQueryString = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Public"); // in Public
+            string PrivateQueryString = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Private"); // in Private
+            string CombinedPublicAndPrivate = TableQuery.CombineFilters(PublicQueryString, TableOperators.Or, PrivateQueryString); // in Public OR Private
+            queryString = TableQuery.CombineFilters(queryString, TableOperators.And, CombinedPublicAndPrivate); // !== Approved AND (in Public OR Private)
+            
+            TableQuery<Story> query = new TableQuery<Story>().Where(queryString);
+
+            result = StoryToSVM(table.ExecuteQuery(query));
 
             return result;
         }
