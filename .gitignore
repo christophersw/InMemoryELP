@@ -187,7 +187,7 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
-*.config
+
 InMemoryELP/Web.config
 *.pubxml
 *.pubxml
