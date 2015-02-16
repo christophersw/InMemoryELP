@@ -7,14 +7,14 @@ gulp.task('main', function () {
     return browserify('./main.js')
        .bundle()
        .pipe(source('./main.js'))
-       .pipe(gulp.dest('./build'));
+       .pipe(gulp.dest('./Public'));
 });
 
 gulp.task('story', function () {
     return browserify('./story.js')
        .bundle()
        .pipe(source('./story.js'))
-       .pipe(gulp.dest('./build'));
+       .pipe(gulp.dest('./Public'));
 });
 
 gulp.task('default', ['main', 'story']);
