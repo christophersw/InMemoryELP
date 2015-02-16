@@ -5,17 +5,6 @@ var $ = require('jquery'),
     jQueryUi = require('jquery-ui');
 
 (function () { window.$ = $; }());
-
-$('document').ready(function () {
-
-    $("#rightBar input[type=submit], #rightBar a, #rightBar button")
-       .button()
-       .click(function (event) {
-           event.preventDefault();
-       });
-
-});
-
 },{"jquery":3,"jquery-ui":2}],2:[function(require,module,exports){
 var jQuery = require('jquery');
 
