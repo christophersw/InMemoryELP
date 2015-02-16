@@ -319,6 +319,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\InMemoryELP.pubxml" />
+    <None Include="Properties\PublishProfiles\Memorial %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Memorial.pubxml" />
     <Content Include="obj\Release\CSAutoParameterize.parameters.xml" />
     <Content Include="obj\Release\InMemoryELP.csproj.FileListAbsolute.txt" />
