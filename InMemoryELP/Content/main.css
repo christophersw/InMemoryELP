@@ -16,6 +16,7 @@ h1, h2, h3, h4{
     background-color:#FCFBE3;
     height:300px;
     margin:0 0 10px 0;
+    border-radius:15px;
 }
 
 /*Right Bar*/
@@ -25,13 +26,13 @@ h1, h2, h3, h4{
     float:right;
     margin:0;
     padding:3%;
-    background-color: #fff;
+    background-color: #FCFBF7;
     border-radius:5px;
     border: 1px solid #2E221F;
 }
 
 #rightBar:hover{
-    background-color: #FCFBF7;
+    background-color: #fff;
     border: 1px solid #5D3726;
 }
 
@@ -70,6 +71,11 @@ h1, h2, h3, h4{
     border: 1px solid #5D3726;
 }
 
+#mainBar:hover{
+    background-color: #FCFBF7;
+    border: 1px solid #5D3726;
+}
+
 #multiMainBar{
     width:66%;
     margin:0;
@@ -87,12 +93,17 @@ h1, h2, h3, h4{
 
 /*Story Cards*/
 .StoryCard {
-    margin:2%;
+    margin:1%;
     width:91%;
-
-    border-radius:5px;
+    border-radius:15px;
     display:inline-block;
-    color:#2E221F;
+    color:#FCFBF7;
+    padding:3%;
+}
+
+.StoryCard:hover{
+   background-color: #fff;
+   /*border: 1px solid #5AC8FF;*/
 }
 
 .StoryCard h1, h2, h3{
