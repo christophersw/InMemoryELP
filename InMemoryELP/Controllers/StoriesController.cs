@@ -157,7 +157,7 @@ namespace InMemoryELP.Controllers
 
             if (context.RemoveStory(storyToUpdate))
             {
-                return RedirectToAction("Index", "Home", null);
+                return RedirectToAction("Index", "Family", null);
             }
             else
             {
