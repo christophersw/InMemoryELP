@@ -19,6 +19,13 @@ h1, h2, h3, h4{
     border-radius:15px;
 }
 
+blockquote {
+    border-left:5px solid #5D3726;
+    background: #FCFBE3;   
+    padding:5%;
+    font-family:'Times New Roman', Times, serif;
+}
+
 /*Right Bar*/
 #rightBar{
     font-size:.8em;

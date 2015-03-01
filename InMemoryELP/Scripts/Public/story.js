@@ -24,12 +24,16 @@ $('document').ready(function () {
 
     editor = new MediumEditor('.editable', {
         anchorInputPlaceholder: 'Type a link',
-        diffLeft: 25,
-        diffTop: 10,
+        diffLeft: 0,
+        diffTop: 0,
         firstHeader: 'h1',
         secondHeader: 'h2',
-        delay: 1000,
-        targetBlank: true
+        delay: 0,
+        targetBlank: true,
+        buttonLabels: {
+            'anchor': 'add link',
+            'quote':'block quote'
+        }
     });
 
     editor.activate();
@@ -61,10 +65,12 @@ $('document').ready(function () {
                 alert("Sorry, there was a problem uploading your story.");
             } else {
                 $('#rightBar').html('');
-                $('#mainBar').html('<h1>Thanks!</h1>' +
-                                    '<p>Your story has been uploaded</p>' +
-                                    '<p>If you choose to publicly share your story it will appear on the main page after it is approved.</p>' +
-                                    '<p>If you choose to privately share your story it will be sent to the family.</p>');
+                $('#mainBar').html('<h1>Thank you for sharing your story about Eldon!</h1>' +
+                                    '<h2>Your story has been uploaded successfully.</h2>' +
+                                    '<h3>So what happens next?</h3>'+
+                                    '<p>If you chose to publicly share your story it will appear on the main page after it is approved.</p>' +
+                                    '<p>If you chose to privately share your story it will be sent to the family.</p>' + 
+                                    '<p><a class="linkButton" style="background-color: #5AC8FF; border-radius: 8px;border: 1px solid #5D3726;color: #fff;font-weight: bold;margin: 10px;padding: 6px 10px;text-decoration: none;" href="/">Back to main page </a></p>');
             }
         });
 
@@ -195,7 +201,7 @@ var $ = require('jquery'),
 function UploadStory() {
 
     var StorySubmissionModel = {};
-    StorySubmissionModel.Title = stripHTML($(FormItems.Title).html());
+    StorySubmissionModel.Title = stripHTML($(FormItems.Title).val());
     StorySubmissionModel.HTMLBodyText = $(FormItems.HTMLBodyText).html();
     StorySubmissionModel.AuthorName = $(FormItems.AuthorName).val();
     StorySubmissionModel.AuthorEmail = $(FormItems.AuthorEmail).val();

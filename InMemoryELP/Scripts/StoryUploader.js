@@ -17,7 +17,7 @@ var $ = require('jquery'),
 function UploadStory() {
 
     var StorySubmissionModel = {};
-    StorySubmissionModel.Title = stripHTML($(FormItems.Title).html());
+    StorySubmissionModel.Title = stripHTML($(FormItems.Title).val());
     StorySubmissionModel.HTMLBodyText = $(FormItems.HTMLBodyText).html();
     StorySubmissionModel.AuthorName = $(FormItems.AuthorName).val();
     StorySubmissionModel.AuthorEmail = $(FormItems.AuthorEmail).val();
