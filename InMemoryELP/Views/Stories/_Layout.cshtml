@@ -21,6 +21,9 @@
     </a>
     <div id="rightBar">
         @RenderSection("rightBar", false)
+        <hr />
+        @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
+        <hr />
     </div>
     <div id="mainBar">
         @RenderBody()

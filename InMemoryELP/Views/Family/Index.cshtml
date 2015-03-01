@@ -3,6 +3,11 @@
     Layout = "~/Views/Family/_Layout.cshtml";
 }
 
-@{Html.RenderAction("PendingApproval", "Stories");}
-<hr />
-@{Html.RenderAction("PrivateStories", "Stories");}
+<h1>Welcome to the Immediate Family Area</h1>
+
+<div class="MultiMainBarSection">
+    @{Html.RenderAction("PendingApproval", "Stories");}
+</div>
+<div class="MultiMainBarSection">
+    @{Html.RenderAction("PrivateStories", "Stories");}
+</div>

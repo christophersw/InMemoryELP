@@ -1,14 +1,22 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        @Html.AntiForgeryToken()
-        <div>
+    <div style="margin:8% 0%">
+        <div style="margin:8% 0%">
             Welcome <b>@User.Identity.Name</b>
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
         </div>
-    }
+        <div style="margin:8% 0%">
+            @Html.ActionLink("Go to Family Area", "Index", "Family", null, null)
+        </div>
+
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </div>
+        }
+    </div>
 }
 else
 {

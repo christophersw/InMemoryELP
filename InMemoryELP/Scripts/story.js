@@ -73,7 +73,7 @@ $('document').ready(function () {
 
     $(document).tooltip();
 
-    $("#rightBar input[type=submit], #rightBar a, #rightBar button, #imageButtonContainer button")
+    $("#rightBar input[type=submit], #rightBar button, #imageButtonContainer button")
         .button()
         .click(function (event) {
             event.preventDefault();

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
     <script src="~/Scripts/Public/main.js"></script>
+
 </head>
 <body>
     <div id="header">
@@ -15,8 +17,11 @@
     </div>
     <div id="rightBar">
         @RenderSection("rightBar", false)
+        <hr />
+        @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
+        <hr />
     </div>
-    <div id="mainBar">
+    <div id="multiMainBar">
         @RenderBody()
     </div>
 </body>
