@@ -10,6 +10,7 @@ using InMemoryELP.Models;
 using System.Text;
 using HtmlAgilityPack;
 using System.Configuration;
+using InMemoryELP.Helpers;
 
 namespace InMemoryELP.Controllers
 {
@@ -179,6 +180,7 @@ namespace InMemoryELP.Controllers
             if (ModelState.IsValid)
             {
                 model.Approved = false;
+                model.Title = HtmlRemoval.StripTagsRegex(model.Title);
                 context.AddStory(model);
 
                 //Store the results by Mapping to a DB Object;

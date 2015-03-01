@@ -195,7 +195,7 @@ var $ = require('jquery'),
 function UploadStory() {
 
     var StorySubmissionModel = {};
-    StorySubmissionModel.Title = $(FormItems.Title).html();
+    StorySubmissionModel.Title = stripHTML($(FormItems.Title).html());
     StorySubmissionModel.HTMLBodyText = $(FormItems.HTMLBodyText).html();
     StorySubmissionModel.AuthorName = $(FormItems.AuthorName).val();
     StorySubmissionModel.AuthorEmail = $(FormItems.AuthorEmail).val();
@@ -269,6 +269,12 @@ function Validate(model){
         response.message = response.message + '</ul></p>';
         return response;
     }
+}
+
+function stripHTML(html) {
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
 }
 
 module.exports = {
