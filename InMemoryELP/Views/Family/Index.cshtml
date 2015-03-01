@@ -3,11 +3,16 @@
     Layout = "~/Views/Family/_Layout.cshtml";
 }
 
-<h1>Welcome to the Immediate Family Area</h1>
-
+<div class="TitleNote">
+    <h1 style="color:#FCFBE3">Welcome to the Family Area</h1>
+    <p>This is an area reserved for immediate family only. From here you can read privately shared stories, and approve (or not) newly shared stories.</p>
+    <p>~ Chris</p>
+</div>
+<h2>Stories that are Pending Approval</h2>
 <div class="MultiMainBarSection">
     @{Html.RenderAction("PendingApproval", "Stories");}
 </div>
+<h2>Stories Shared Privately with ONLY Family</h2>
 <div class="MultiMainBarSection">
     @{Html.RenderAction("PrivateStories", "Stories");}
 </div>
