@@ -43,7 +43,8 @@ blockquote {
     border: 1px solid #5D3726;
 }
 
-#rightBar a, #rightBar a:link, #rightBar a:visited, #rightBar .inputButton {
+#rightBar a, #rightBar a:link, #rightBar a:visited, #rightBar .inputButton,
+.ButtonContainer a, .ButtonContainer a:link, .ButtonContainer a:visited   {
     background-color: #5AC8FF;
     border-radius: 8px;
     border: 1px solid #5D3726;
@@ -54,7 +55,7 @@ blockquote {
     text-decoration: none;
 }
 
-#rightBar a, #rightBar a:hover {
+#rightBar a, #rightBar a:hover, .ButtonContainer a, .ButtonContainer a:hover {
     background-color: #fff;
     border-radius: 8px;
     border: 1px solid #5AC8FF;
@@ -112,7 +113,7 @@ blockquote {
     width:91%;
     border-radius:15px;
     display:inline-block;
-    color:#FCFBF7;
+    color:black;
     padding:3%;
 }
 
