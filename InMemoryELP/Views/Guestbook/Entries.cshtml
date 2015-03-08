@@ -1,0 +1,38 @@
+﻿@model IEnumerable<InMemoryELP.Models.GusetbookViewModel>
+@{
+    Layout = null;
+}
+<style>
+    table { 
+        text-align:left;
+        border-spacing: 15px;
+        border-collapse: separate;
+    }
+</style>
+<table id="guestbook">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Comment
+        </th>
+    </tr>
+    @foreach (var row in Model.OrderBy(m => m.Date))
+    {
+        <tr>
+            <td>
+                @row.Date.ToShortDateString()
+            </td>
+            <td>
+                @row.Name
+            </td>
+            <td>
+                @row.Comment
+            </td>
+        </tr>
+    }
+</table>

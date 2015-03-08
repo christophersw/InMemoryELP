@@ -16,6 +16,10 @@
 <div class="MultiMainBarSection">
     @{Html.RenderAction("PrivateStories", "Stories");}
 </div>
+<h2>Guest Book</h2>
+<div class="MultiMainBarSection">
+    @{Html.RenderAction("Entries", "Guestbook", null);}
+</div>
 
 @section rightBar{
     <div style="margin:8% 0%">

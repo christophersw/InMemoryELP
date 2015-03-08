@@ -285,7 +285,6 @@ namespace InMemoryELP.Models
             }
         }
 
-
         private StoryViewModel StoryToSVM(Story row)
         {
            

@@ -1,0 +1,42 @@
+﻿@model InMemoryELP.Models.GusetbookViewModel
+@{
+    Layout = null;
+}
+<hr />
+<div id="guestbook">
+    <form id="guestbookForm" action="/guestbook/submit" method="post">
+        @Html.AntiForgeryToken()
+
+        <h3>Sign guest book</h3>
+
+        @Html.ValidationSummary()
+
+        <div>
+            Your Name
+        </div>
+
+        <input id="guestbookName" type="text" value="" name="Name" id="Name">
+        <div>
+            Comment
+        </div>
+        <textarea id="guestbookComment" rows="2" name="Comment" id="Comment" cols="20"></textarea>
+        <input class="inputButton" type="submit" name="guestBookSubmit" value="submit" />
+    </form>
+    <script type="text/javascript">
+        var frm = $('#guestbookForm');
+
+        frm.submit(function (ev) {
+
+            ev.preventDefault();
+
+            $.ajax({
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+                    $('#guestbook').html(data);
+                }
+            });
+        });
+    </script>
+</div>

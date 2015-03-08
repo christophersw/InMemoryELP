@@ -206,6 +206,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GuestbookController.cs" />
     <Compile Include="Helpers\HtmlRemoval.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FamilyController.cs" />
@@ -231,6 +232,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\GuestbookModel.cs" />
+    <Compile Include="Models\GuestbookTableContext.cs" />
     <Compile Include="Models\ImageBlobContext.cs" />
     <Compile Include="Models\StoryModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -413,6 +416,8 @@
     <Content Include="Views\Stories\PendingApproval.cshtml" />
     <Content Include="Views\Stories\PrivateStories.cshtml" />
     <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Views\Guestbook\Form.cshtml" />
+    <Content Include="Views\Guestbook\Entries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

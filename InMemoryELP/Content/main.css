@@ -43,7 +43,7 @@ blockquote {
     border: 1px solid #5D3726;
 }
 
-#rightBar a, #rightBar a:link, #rightBar a:visited {
+#rightBar a, #rightBar a:link, #rightBar a:visited, #rightBar .inputButton {
     background-color: #5AC8FF;
     border-radius: 8px;
     border: 1px solid #5D3726;
