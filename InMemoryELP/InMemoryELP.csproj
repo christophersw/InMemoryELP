@@ -216,6 +216,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\URLSlugger.cs" />
     <Compile Include="Migrations\201412071858562_InitialCreate.cs" />
     <Compile Include="Migrations\201412071858562_InitialCreate.Designer.cs">
       <DependentUpon>201412071858562_InitialCreate.cs</DependentUpon>

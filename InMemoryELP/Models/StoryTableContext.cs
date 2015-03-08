@@ -202,6 +202,32 @@ namespace InMemoryELP.Models
             return result;
         }
 
+
+        public StoryViewModel GetPublicStory(string slug)
+        {
+            var table = getTable();
+            
+            // Create the table query.
+            TableQuery<Story> query = new TableQuery<Story>().Where(
+                TableQuery.CombineFilters(
+                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Public"),
+                    TableOperators.And,
+                    TableQuery.GenerateFilterCondition("URLSlug", QueryComparisons.Equal, slug)));
+
+            //run query
+            var results = table.ExecuteQuery(query);
+
+            //return result
+            if (results.Count() == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return StoryToSVM(results.FirstOrDefault());
+            }
+        }
+
         public StoryViewModel GetPublicStory(Guid id)
         {
             var table = getTable();
@@ -215,6 +241,31 @@ namespace InMemoryELP.Models
             else
             {
                 return null;
+            }
+        }
+
+        public StoryViewModel GetPrivateStory(string slug)
+        {
+            var table = getTable();
+
+            // Create the table query.
+            TableQuery<Story> query = new TableQuery<Story>().Where(
+                TableQuery.CombineFilters(
+                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Private"),
+                    TableOperators.And,
+                    TableQuery.GenerateFilterCondition("URLSlug", QueryComparisons.Equal, slug)));
+
+            //run query
+            var results = table.ExecuteQuery(query);
+
+            //return result
+            if (results.Count() == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return StoryToSVM(results.FirstOrDefault());
             }
         }
 
@@ -233,6 +284,7 @@ namespace InMemoryELP.Models
                 return null;
             }
         }
+
 
         private StoryViewModel StoryToSVM(Story row)
         {
@@ -270,7 +322,8 @@ namespace InMemoryELP.Models
                     ImageUrls = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(row.ImageUrls),
                     Public = true,
                     Preview = row.Preview, 
-                    Approved = row.Approved
+                    Approved = row.Approved,
+                    URLSlug = row.URLSlug
                 });   
             }
 

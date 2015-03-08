@@ -33,7 +33,7 @@
 
 @foreach (var story in Model)
 {
-    <a href="/stories/story/@story.Id">
+    <a href="/story/@story.URLSlug">
     <div class="StoryCard">
         <h2>@story.Title</h2>
         <p>by <span>@story.AuthorName</span></p>

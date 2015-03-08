@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -42,6 +43,7 @@ namespace InMemoryELP.Models
             }
 
             this.Title = Sanitizer.GetSafeHtmlFragment(model.Title);
+            this.URLSlug = Helpers.UrlSlugger.ToUrlSlug(model.Title);
             this.HTMLBodyText = Sanitizer.GetSafeHtmlFragment(model.HTMLBodyText);
             this.ImageUrls = Newtonsoft.Json.JsonConvert.SerializeObject(helpers.findImages(this.HTMLBodyText));
             this.Preview = helpers.generatePreview(this.HTMLBodyText);
@@ -53,6 +55,8 @@ namespace InMemoryELP.Models
         public Story() { }
 
         public string Title { get; set; }
+
+        public string URLSlug { get; set; }
 
         public string HTMLBodyText {get;set;}
 
@@ -88,7 +92,7 @@ namespace InMemoryELP.Models
                 return model.ToArray<string>();
             }
 
-            public static string generatePreview(string html, int maxChars = 140)
+            public static string generatePreview(string html, int maxChars = 280)
             {
                 HtmlDocument doc = new HtmlDocument();
                 doc.LoadHtml(html);
@@ -119,7 +123,7 @@ namespace InMemoryELP.Models
                     return sb.ToString();
                 }
 
-            }
+            }            
         }
     }
 
@@ -151,6 +155,8 @@ namespace InMemoryELP.Models
         public string Preview { get; set; }
 
         public bool Approved { get; set; }
+
+        public string URLSlug { get; set; }
 
     }
 

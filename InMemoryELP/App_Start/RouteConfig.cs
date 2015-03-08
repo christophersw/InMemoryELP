@@ -14,10 +14,16 @@ namespace InMemoryELP
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "story",
+              url: "story/{id}",
+              defaults: new { controller = "Stories", action = "name", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            );            
         }
     }
 }

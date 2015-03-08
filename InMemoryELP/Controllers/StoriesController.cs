@@ -48,6 +48,31 @@ namespace InMemoryELP.Controllers
                 return Content("Not Found");
             }
         }
+
+        public ActionResult Name(string id)
+        {
+            var model = context.GetPublicStory(id);
+            if (model != null)
+            {
+                return View("Story", model);
+            }
+            else
+            {
+                //Check for private stories if Family...
+                if (User.IsInRole("Family"))
+                {
+                    model = context.GetPrivateStory(id);
+
+                    if (model != null)
+                    {
+                        return View("Story", model);
+                    }
+                }
+
+                Response.StatusCode = 404;
+                return Content("Not Found");
+            }
+        }
                
         [ChildActionOnly]
         [Authorize(Roles="Family")]
