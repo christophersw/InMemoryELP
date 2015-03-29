@@ -10,7 +10,7 @@
         </p>
         <p>
             <strong class="ButtonContainer">
-                We would like to have you add to this "story of Eldon" - Please <a href="/Stories/Create">Share a story</a> about Eldon, and the impact his life had on yours!
+                We would like to have you add to this "story of Eldon" - please <a href="/Stories/Create">share a story</a> about Eldon, and the impact his life had on yours!
             </strong>
         </p>
     <p><i>~ Mary & Family</i></p>
@@ -20,10 +20,12 @@
 
 
 @section rightBar{
-    <div style="margin:8% 0%">
-        @Html.ActionLink("Share a story", "Create", "Stories", null, null)
+    <div class="rightBarSection">
+        <p>
+            @Html.ActionLink("Share a Story", "Create", "Stories", null, null)
+        </p>
     </div>
-    <div>
+    <div class="rightBarSection mobileHidden">
         @{Html.RenderAction("Form", "Guestbook", null);}
     </div>
 }

@@ -1,6 +1,6 @@
 ﻿body {
-    width:95%;
-    min-width:800px;
+    width:98%;
+    min-width:300px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color:#CBD6DC;
     color: #2E221F;
@@ -10,13 +10,42 @@ h1, h2, h3, h4{
     color:#2E221F;
 }
 
+#banner{
+    background-color: #2e221f;                                                                    
+    height: auto;
+    width: 100%;
+    border-radius:10px;
+}
+
 #header{
     width:100%;
-    background-image:url('../Content/Images/Bill_of_Rights_Pg1of1_AC.jpg');
-    background-color:#FCFBE3;
-    height:300px;
+    height:500px;
+    background-image:url('../Content/Images/square-banner.png');
+    background-repeat: no-repeat;
+    background-color:#2E221F;
     margin:0 0 10px 0;
     border-radius:15px;
+    background-size: auto auto;
+}
+
+#storyHeader{
+    background-color: #2e221f;
+    border-radius: 10px;
+    color: #fcfbe3;
+    font-family: tahoma,sans-serif;
+    font-size: 50px;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: 94%;
+}
+
+#storyHeader a {
+    text-decoration: none;
+}
+
+#storyHeader a:visited {
+    color: #fcfbe3;
 }
 
 blockquote {
@@ -28,23 +57,20 @@ blockquote {
 
 /*Right Bar*/
 #rightBar{
-    font-size:.8em;
-    width:20%;
+    font-size:1em;
+    width:22%;
     float:right;
     margin:0;
     padding:3%;
     background-color: #FCFBF7;
     border-radius:5px;
-    border: 1px solid #2E221F;
 }
 
 #rightBar:hover{
     background-color: #fff;
-    border: 1px solid #5D3726;
 }
 
-#rightBar a, #rightBar a:link, #rightBar a:visited, #rightBar .inputButton,
-.ButtonContainer a, .ButtonContainer a:link, .ButtonContainer a:visited   {
+#rightBar a, #rightBar a:link, #rightBar a:visited, #rightBar .inputButton {
     background-color: #5AC8FF;
     border-radius: 8px;
     border: 1px solid #5D3726;
@@ -55,7 +81,7 @@ blockquote {
     text-decoration: none;
 }
 
-#rightBar a, #rightBar a:hover, .ButtonContainer a, .ButtonContainer a:hover {
+#rightBar a, #rightBar a:hover {
     background-color: #fff;
     border-radius: 8px;
     border: 1px solid #5AC8FF;
@@ -66,22 +92,26 @@ blockquote {
     text-decoration: none;
 }
 
+.rightBarSection {
+    border-bottom: 1px solid #2e221f;
+    padding: 10% 0;
+    text-align: center;
+}
 
 
 /*Main Bar*/
 #mainBar{
-    width:66%;
+    width:65%;
     float:left;
     margin:0;
     padding:3%;
-    background-color: #fff;
+    background-color: #FCFBF7;
     border-radius:10px;
-    border: 1px solid #5D3726;
+    border: 1px solid #FCFBF7;
 }
 
 #mainBar:hover{
     background-color: #FCFBF7;
-    border: 1px solid #5D3726;
 }
 
 #multiMainBar{
@@ -106,6 +136,15 @@ blockquote {
     color:#fff; 
     border: 2px solid #5d3726;
 }
+
+.TitleNote a{
+    color:#5AC8FF;
+}
+
+.TitleNote a:visited{
+    color:#5AC8FF;
+}
+
 
 /*Story Cards*/
 .StoryCard {
@@ -171,4 +210,48 @@ blockquote {
 
 .StoryCard img{
     display:none;
+}
+
+/**/
+@media (max-width: 800px){
+    #rightBar{
+        border:none;
+        border-radius: 5px;
+        float: left;
+        padding: 2%;
+        width: 96%;
+        margin: 2% 0;
+    }
+
+    .rightBarSection {
+        border: none;
+        margin:0;
+        padding:0;
+        float: left;
+
+    }
+
+    .mobileHidden {
+        display:none;
+    }
+
+    #mainBar {
+        width:92%;
+    }
+
+    .StoryCard .Image{
+        padding:0% 4%;
+        width:92%;
+    }
+
+    .StoryCard .PreviewBox{
+       margin-top:5%;
+       width:100%;
+    }
+
+
+    .StoryCard .Preview{
+       width:100%;
+    }
+
 }

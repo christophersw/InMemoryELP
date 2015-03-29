@@ -8,16 +8,16 @@
     <script src="~/Scripts/Public/main.js"></script>
 </head>
 <body>
-    <div id="header">
-        <div id="headerText">
-
-        </div>
-    </div>
+    <a href="/">
+        <img src="/Content/Images/banner.jpg" alt="banner" id="banner" />
+    </a>
     <div id="rightBar">
+            
         @RenderSection("rightBar", false)
-        <hr />
-        @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
-        <hr />
+        
+        <div class="rightBarSection">
+            @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
+        </div>
     </div>
     <div id="mainBar">
         @RenderBody()
