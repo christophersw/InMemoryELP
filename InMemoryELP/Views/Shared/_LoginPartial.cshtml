@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <div style="margin:8% 0%">
+    <p>
         <div style="margin:8% 0%">
             Welcome <b>@User.Identity.Name</b>
         </div>
@@ -16,11 +16,11 @@
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
             </div>
         }
-    </div>
+    </p>
 }
 else
 {
-    <div style="margin:12% 0%">
-        @Html.ActionLink("Family Member Log in", "Login", "Account")
-    </div>
+    <p>
+        @Html.ActionLink("Family Login", "Login", "Account")
+    </p>
 }

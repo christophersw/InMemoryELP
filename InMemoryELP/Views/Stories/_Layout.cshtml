@@ -12,18 +12,25 @@
     <script src="~/Scripts/Public/story.js"></script>
 </head>
 <body id="body" style="display:none">
-    <a href="/">
-        <div id="header">
-            <div id="headerText">
+    <div id="storyHeader" style="background-color: #2e221f;
+                    border-radius: 10px;
+                    color: #fcfbe3;
+                    font-family: tahoma,sans-serif;
+                    font-size: 50px;
+                    height: 80px;
+                    margin-bottom: 10px;
+                    padding: 20px;
+                    width: 94%;">
+        <a href="/">
+            Memories of Eldon.
+        </a>
+    </div>
 
-            </div>
-        </div>
-    </a>
     <div id="rightBar">
-        @RenderSection("rightBar", false)
-        <hr />
-        @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
-        <hr />
+            @RenderSection("rightBar", false)
+        <div class="rightBarSection">
+            @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
+        </div>
     </div>
     <div id="mainBar">
         @RenderBody()

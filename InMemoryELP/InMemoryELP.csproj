@@ -253,6 +253,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\flat.min.css" />
+    <Content Include="Content\Images\Banner.jpg" />
+    <Content Include="Content\Images\BannerNarrow.jpg" />
     <Content Include="Content\Images\link.png" />
     <Content Include="Content\Images\remove.png" />
     <Content Include="Content\Images\resize-bigger.png" />
@@ -358,6 +360,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\story.js" />
     <Content Include="Scripts\StoryUploader.js" />
+    <Content Include="Content\Images\Eldon and Mary.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

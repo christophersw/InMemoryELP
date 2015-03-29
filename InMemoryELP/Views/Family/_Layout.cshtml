@@ -10,16 +10,15 @@
 
 </head>
 <body>
-    <div id="header">
-        <div id="headerText">
+    <a href="/">
+        <img src="/Content/Images/banner.jpg" alt="banner" id="banner" />
+    </a>
 
-        </div>
-    </div>
     <div id="rightBar">
         @RenderSection("rightBar", false)
-        <hr />
+  
         @{Html.RenderPartial("~/Views/Shared/_LoginPartial.cshtml", null);}
-        <hr />
+
     </div>
     <div id="multiMainBar">
         @RenderBody()
