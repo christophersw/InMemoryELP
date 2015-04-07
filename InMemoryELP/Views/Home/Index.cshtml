@@ -25,6 +25,11 @@
             @Html.ActionLink("Share a Story", "Create", "Stories", null, null)
         </p>
     </div>
+    <div class="rightBarSection">
+        <p>
+            @Html.ActionLink("Obituary", "Obituary", "Home", null, null)
+        </p>
+    </div>
     <div class="rightBarSection mobileHidden">
         @{Html.RenderAction("Form", "Guestbook", null);}
     </div>

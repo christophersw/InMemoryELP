@@ -67,7 +67,7 @@ $('document').ready(function () {
                 $('#mainBar').html('<h1>Thank you for sharing your story about Eldon!</h1>' +
                                     '<h2>Your story has been uploaded successfully.</h2>' +
                                     '<h3>So what happens next?</h3>'+
-                                    '<p>If you chose to publicly share your story it will appear on the main page after it is approved.</p>' +
+                                    '<p>Unless marked “Private”, your story will be added to the webpage after it has been shared with the family.</p>' +
                                     '<p>If you chose to privately share your story it will be sent to the family.</p>' + 
                                     '<p><a class="linkButton" style="background-color: #5AC8FF; border-radius: 8px;border: 1px solid #5D3726;color: #fff;font-weight: bold;margin: 10px;padding: 6px 10px;text-decoration: none;" href="/">Back to main page </a></p>');
             }
@@ -84,8 +84,6 @@ $('document').ready(function () {
         .click(function (event) {
             event.preventDefault();
         });
-
-
 
     console.log('show UI.');
     $('#body').show(600);
